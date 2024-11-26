@@ -1,15 +1,17 @@
 using UnityEngine;
 using TMPro;
 
-public class Sphere : Shape
+public class Sphere : Shape // Inheritance 
 {
     public TMP_Text textInput;
 
-    protected override string name = "Sphere";
-    protected override string color = "Orange";
-
+    void Start()
+    {
+        Name = gameObject.name;
+    }
+    // Polymorphism
     protected override void DisplayText()
     {
-        textInput.text = "Clicked: " + name;
+        textInput.text = "Clicked: " + Name;
     }
 }
